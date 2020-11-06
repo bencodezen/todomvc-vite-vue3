@@ -3,6 +3,9 @@ import TheFooter from './components/TheFooter.vue'
 
 export default {
   name: 'App',
+  components: {
+    TheFooter
+  },
   data: () => ({
     userInput: '',
     taskList: [
@@ -15,10 +18,7 @@ export default {
         label: 'Bread'
       }
     ]
-  }),
-  components: {
-    TheFooter
-  }
+  })
 }
 </script>
 
