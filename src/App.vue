@@ -1,11 +1,11 @@
 <script>
-import TaskListItem from './components/TaskListItem.vue'
+import TodoListItem from './components/TodoListItem.vue'
 import TheFooter from './components/TheFooter.vue'
 
 export default {
   name: 'App',
   components: {
-    TaskListItem,
+    TodoListItem,
     TheFooter
   },
   data: () => ({
@@ -56,7 +56,7 @@ export default {
       <input id="toggle-all" class="toggle-all" type="checkbox" />
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
-        <TaskListItem
+        <TodoListItem
           v-for="(task, index) in taskList"
           :key="`task-${index}`"
           v-bind="task"
