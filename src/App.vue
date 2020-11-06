@@ -35,6 +35,9 @@ export default {
         })
         this.userInput = ''
       }
+    },
+    updateTaskItem({ position }) {
+      this.taskList[position].completed = !this.taskList[position].completed
     }
   }
 }
@@ -60,6 +63,8 @@ export default {
           v-for="(task, index) in taskList"
           :key="`task-${index}`"
           v-bind="task"
+          :position="index"
+          @update-status="updateTaskItem"
         />
       </ul>
       <footer class="footer">

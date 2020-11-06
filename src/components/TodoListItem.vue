@@ -8,6 +8,17 @@ export default {
     label: {
       type: String,
       required: true
+    },
+    position: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    updateStatus() {
+      this.$emit('update-status', {
+        position: this.position
+      })
     }
   }
 }
@@ -16,7 +27,12 @@ export default {
 <template>
   <li>
     <div class="view">
-      <input type="checkbox" class="toggle" v-model="completed" />
+      <input
+        type="checkbox"
+        class="toggle"
+        :checked="completed"
+        @change="updateStatus"
+      />
       <label>{{ label }}</label>
       <button class="destroy"></button>
     </div>
