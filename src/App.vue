@@ -46,6 +46,9 @@ export default {
         this.userInput = ''
       }
     },
+    removeItem({ position }) {
+      this.taskList.splice(position)
+    },
     updateTaskItem({ position }) {
       this.taskList[position].completed = !this.taskList[position].completed
     }
@@ -75,6 +78,7 @@ export default {
           v-bind="task"
           :position="index"
           @update-status="updateTaskItem"
+          @delete-item="removeItem"
         />
       </ul>
       <footer class="footer">

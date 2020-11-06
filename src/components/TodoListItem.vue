@@ -15,6 +15,11 @@ export default {
     }
   },
   methods: {
+    deleteItem() {
+      this.$emit('delete-item', {
+        position: this.position
+      })
+    },
     updateStatus() {
       this.$emit('update-status', {
         position: this.position
@@ -34,7 +39,7 @@ export default {
         @change="updateStatus"
       />
       <label>{{ label }}</label>
-      <button class="destroy"></button>
+      <button class="destroy" @click="deleteItem"></button>
     </div>
     <input type="text" class="edit" />
   </li>
