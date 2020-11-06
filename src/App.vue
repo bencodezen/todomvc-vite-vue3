@@ -18,7 +18,18 @@ export default {
         label: 'Bread'
       }
     ]
-  })
+  }),
+  methods: {
+    registerTask() {
+      if (this.userInput) {
+        this.taskList.push({
+          completed: false,
+          label: this.userInput
+        })
+        this.userInput = ''
+      }
+    }
+  }
 }
 </script>
 
@@ -31,6 +42,7 @@ export default {
         placeholder="What needs to be done?"
         autofocus
         v-model="userInput"
+        @keyup.enter="registerTask"
       />
     </header>
     <section style="display: block" class="main">
