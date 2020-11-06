@@ -19,6 +19,11 @@ export default {
       }
     ]
   }),
+  computed: {
+    remainingTasks() {
+      return this.taskList.filter(task => task.completed === false).length
+    }
+  },
   methods: {
     registerTask() {
       if (this.userInput) {
@@ -63,7 +68,7 @@ export default {
         </li>
       </ul>
       <footer class="footer">
-        <span class="todo-count"></span>
+        <span class="todo-count">{{ remainingTasks }} items left</span>
         <ul class="filters">
           <li>
             <a href="#/" class="selected">All</a>

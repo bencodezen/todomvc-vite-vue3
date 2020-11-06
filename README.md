@@ -8,13 +8,13 @@ A TodoMVC app built with [Vue.js 3](https://v3.vuejs.org) and [Vite](https://git
 
 - [x] Display todos title
 - [ ] Task input
-  - [ ] Placeholder "What needs to be done?"
+  - [x] Placeholder "What needs to be done?"
   - [ ] Label for "Mark all as complete"
 - [ ] Task Items
   - [ ] Click to
   - [ ] Double click to edit
 - [ ] Metadata Bar
-  - [ ] If tasks exist, show metabar
+  - [x] If tasks exist, show metabar
   - [ ] Items left
   - [ ] "All" items tab
   - [ ] "Active" items tab
