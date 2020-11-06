@@ -11,15 +11,15 @@ A TodoMVC app built with [Vue.js 3](https://v3.vuejs.org) and [Vite](https://git
   - [x] Placeholder "What needs to be done?"
   - [ ] Label for "Mark all as complete"
 - [ ] Task Items
-  - [ ] Click to
+  - [x] Click to complete
   - [ ] Double click to edit
-- [ ] Metadata Bar
+- [x] Metadata Bar
   - [x] If tasks exist, show metabar
-  - [ ] Items left
-  - [ ] "All" items tab
-  - [ ] "Active" items tab
-  - [ ] "Complete" items tab
-  - [ ] Clear completed
+  - [x] Items left
+  - [x] "All" items tab
+  - [x] "Active" items tab
+  - [x] "Complete" items tab
+  - [x] Clear completed
 - [x] Footer
   - [x] Double-click to edit a todo
   - [x] Written by
