@@ -3,6 +3,19 @@ import TheFooter from './components/TheFooter.vue'
 
 export default {
   name: 'App',
+  data: () => ({
+    userInput: '',
+    taskList: [
+      {
+        completed: true,
+        label: 'Milk'
+      },
+      {
+        completed: false,
+        label: 'Bread'
+      }
+    ]
+  }),
   components: {
     TheFooter
   }
@@ -13,12 +26,30 @@ export default {
   <section class="todoapp">
     <header class="header">
       <h1>todos</h1>
-      <input class="new-todo" placeholder="What needs to be done?" autofocus />
+      <input
+        class="new-todo"
+        placeholder="What needs to be done?"
+        autofocus
+        v-model="userInput"
+      />
     </header>
-    <section style="display: none" class="main">
+    <section style="display: block" class="main">
       <input id="toggle-all" class="toggle-all" type="checkbox" />
       <label for="toggle-all">Mark all as complete</label>
-      <ul class="todo-list"></ul>
+      <ul class="todo-list">
+        <li
+          class="todo"
+          v-for="(task, index) in taskList"
+          :key="`task-${index}`"
+        >
+          <div class="view">
+            <input type="checkbox" class="toggle" v-model="task.completed" />
+            <label>{{ task.label }}</label>
+            <button class="destroy"></button>
+          </div>
+          <input type="text" class="edit" />
+        </li>
+      </ul>
       <footer class="footer">
         <span class="todo-count"></span>
         <ul class="filters">
