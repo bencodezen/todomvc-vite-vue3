@@ -45,7 +45,7 @@ export default {
         @keyup.enter="registerTask"
       />
     </header>
-    <section style="display: block" class="main">
+    <section v-show="taskList.length > 0" class="main">
       <input id="toggle-all" class="toggle-all" type="checkbox" />
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
