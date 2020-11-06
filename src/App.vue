@@ -37,6 +37,9 @@ export default {
     }
   },
   methods: {
+    clearCompletedTasks() {
+      this.taskList = this.taskList.filter(item => item.completed === false)
+    },
     registerTask() {
       if (this.userInput) {
         this.taskList.push({
@@ -96,7 +99,9 @@ export default {
             >
           </li>
         </ul>
-        <button class="clear-completed">Clear completed</button>
+        <button class="clear-completed" @click="clearCompletedTasks">
+          Clear completed
+        </button>
       </footer>
     </section>
   </section>
