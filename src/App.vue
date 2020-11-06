@@ -9,6 +9,7 @@ export default {
     TheFooter
   },
   data: () => ({
+    currentTab: 'all',
     userInput: '',
     taskList: [
       {
@@ -24,6 +25,15 @@ export default {
   computed: {
     remainingTasks() {
       return this.taskList.filter(task => task.completed === false).length
+    },
+    visibleTasks() {
+      if (this.currentTab === 'active') {
+        return this.taskList.filter(item => item.completed === false)
+      } else if (this.currentTab === 'completed') {
+        return this.taskList.filter(item => item.completed === true)
+      } else {
+        return this.taskList
+      }
     }
   },
   methods: {
@@ -60,7 +70,7 @@ export default {
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
         <TodoListItem
-          v-for="(task, index) in taskList"
+          v-for="(task, index) in visibleTasks"
           :key="`task-${index}`"
           v-bind="task"
           :position="index"
@@ -71,13 +81,15 @@ export default {
         <span class="todo-count">{{ remainingTasks }} items left</span>
         <ul class="filters">
           <li>
-            <a href="#/" class="selected">All</a>
+            <a href="#/" class="selected" @click="currentTab = 'all'">All</a>
           </li>
           <li>
-            <a href="#/active">Active</a>
+            <a href="#/active" @click="currentTab = 'active'">Active</a>
           </li>
           <li>
-            <a href="#/completed">Completed</a>
+            <a href="#/completed" @click="currentTab = 'completed'"
+              >Completed</a
+            >
           </li>
         </ul>
         <button class="clear-completed">Clear completed</button>
