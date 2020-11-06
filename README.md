@@ -6,7 +6,7 @@ A TodoMVC app built with [Vue.js 3](https://v3.vuejs.org) and [Vite](https://git
 
 ## Project Requirements
 
-- [ ] Display todos title
+- [x] Display todos title
 - [ ] Task input
   - [ ] Placeholder "What needs to be done?"
   - [ ] Label for "Mark all as complete"
@@ -20,8 +20,8 @@ A TodoMVC app built with [Vue.js 3](https://v3.vuejs.org) and [Vite](https://git
   - [ ] "Active" items tab
   - [ ] "Complete" items tab
   - [ ] Clear completed
-- [ ] Footer
-  - [ ] Double-click to edit a todo
-  - [ ] Written by
-  - [ ] Inspired from TodoMVC
-  - [ ] Source Code
+- [x] Footer
+  - [x] Double-click to edit a todo
+  - [x] Written by
+  - [x] Inspired from TodoMVC
+  - [x] Source Code
