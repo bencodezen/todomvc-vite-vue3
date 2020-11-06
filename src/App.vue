@@ -1,9 +1,11 @@
 <script>
+import TaskListItem from './components/TaskListItem.vue'
 import TheFooter from './components/TheFooter.vue'
 
 export default {
   name: 'App',
   components: {
+    TaskListItem,
     TheFooter
   },
   data: () => ({
@@ -54,18 +56,11 @@ export default {
       <input id="toggle-all" class="toggle-all" type="checkbox" />
       <label for="toggle-all">Mark all as complete</label>
       <ul class="todo-list">
-        <li
-          class="todo"
+        <TaskListItem
           v-for="(task, index) in taskList"
           :key="`task-${index}`"
-        >
-          <div class="view">
-            <input type="checkbox" class="toggle" v-model="task.completed" />
-            <label>{{ task.label }}</label>
-            <button class="destroy"></button>
-          </div>
-          <input type="text" class="edit" />
-        </li>
+          v-bind="task"
+        />
       </ul>
       <footer class="footer">
         <span class="todo-count">{{ remainingTasks }} items left</span>
