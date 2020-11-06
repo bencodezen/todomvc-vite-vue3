@@ -1,3 +1,14 @@
+<script>
+import TheFooter from './components/TheFooter.vue'
+
+export default {
+  name: 'App',
+  components: {
+    TheFooter
+  }
+}
+</script>
+
 <template>
   <section class="todoapp">
     <header class="header">
@@ -27,17 +38,6 @@
   </section>
   <TheFooter />
 </template>
-
-<script>
-import TheFooter from './components/TheFooter.vue'
-
-export default {
-  name: 'App',
-  components: {
-    TheFooter
-  }
-}
-</script>
 
 <style>
 html,
